@@ -765,6 +765,90 @@
             }
         }
 
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.12);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.2rem;
+            display: block;
+        }
+
+        .service-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .service-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .service-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .service-tag {
+            padding: 0.3rem 0.8rem;
+            background: rgba(0, 255, 136, 0.08);
+            border: 1px solid rgba(0, 255, 136, 0.25);
+            color: var(--primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
         /* Loading Animation */
         @keyframes pulse {
             0%, 100% {
@@ -812,6 +896,115 @@
             <div class="scroll-indicator"></div>
         </div>
     </header>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            <p style="color: var(--text-secondary); margin-top: 1.5rem; font-size: 1rem; line-height: 1.8; max-width: 700px;">
+                End-to-end AI solutions tailored to your needs — from research and prototyping to production-ready deployment.
+            </p>
+            <div class="services-grid">
+
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <span class="service-icon">🧠</span>
+                    <div class="service-number">[SERVICE_01]</div>
+                    <h3 class="service-title">Computer Vision Systems</h3>
+                    <p class="service-desc">
+                        Building real-time object detection, image classification, segmentation, and face recognition systems using state-of-the-art models like YOLO and CNNs. From medical imaging to industrial inspection.
+                    </p>
+                    <div class="service-tags">
+                        <span class="service-tag">YOLO</span>
+                        <span class="service-tag">OpenCV</span>
+                        <span class="service-tag">Segmentation</span>
+                        <span class="service-tag">Real-time</span>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <span class="service-icon">💬</span>
+                    <div class="service-number">[SERVICE_02]</div>
+                    <h3 class="service-title">NLP & AI Chatbots</h3>
+                    <p class="service-desc">
+                        Developing intelligent conversational AI powered by LLMs and RAG pipelines. Domain-specific chatbots with reduced hallucination, context-aware responses, and multi-turn dialogue.
+                    </p>
+                    <div class="service-tags">
+                        <span class="service-tag">LangChain</span>
+                        <span class="service-tag">RAG</span>
+                        <span class="service-tag">OpenAI</span>
+                        <span class="service-tag">Vector DB</span>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <span class="service-icon">🔬</span>
+                    <div class="service-number">[SERVICE_03]</div>
+                    <h3 class="service-title">Deep Learning Models</h3>
+                    <p class="service-desc">
+                        Designing, training, and fine-tuning custom deep learning models using TensorFlow and PyTorch. Transfer learning, CNNs, and transformer-based architectures for classification and prediction tasks.
+                    </p>
+                    <div class="service-tags">
+                        <span class="service-tag">TensorFlow</span>
+                        <span class="service-tag">PyTorch</span>
+                        <span class="service-tag">Transfer Learning</span>
+                        <span class="service-tag">Fine-tuning</span>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <span class="service-icon">📊</span>
+                    <div class="service-number">[SERVICE_04]</div>
+                    <h3 class="service-title">Data Analysis & ML Pipelines</h3>
+                    <p class="service-desc">
+                        End-to-end machine learning pipelines — from data cleaning and feature engineering to model training, evaluation, and deployment. Statistical analysis and interactive data visualizations.
+                    </p>
+                    <div class="service-tags">
+                        <span class="service-tag">Pandas</span>
+                        <span class="service-tag">Scikit-learn</span>
+                        <span class="service-tag">Data Viz</span>
+                        <span class="service-tag">ML Pipelines</span>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <span class="service-icon">🚀</span>
+                    <div class="service-number">[SERVICE_05]</div>
+                    <h3 class="service-title">AI Model Deployment</h3>
+                    <p class="service-desc">
+                        Taking AI models from research to production. Building APIs, Streamlit dashboards, and web interfaces that make AI accessible, reliable, and ready for real-world use.
+                    </p>
+                    <div class="service-tags">
+                        <span class="service-tag">Streamlit</span>
+                        <span class="service-tag">FastAPI</span>
+                        <span class="service-tag">Docker</span>
+                        <span class="service-tag">REST API</span>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <span class="service-icon">🩺</span>
+                    <div class="service-number">[SERVICE_06]</div>
+                    <h3 class="service-title">AI for Healthcare & Safety</h3>
+                    <p class="service-desc">
+                        Specialized AI solutions for medical imaging, tumor detection, and safety monitoring systems. Combining accuracy with reliability for high-stakes applications.
+                    </p>
+                    <div class="service-tags">
+                        <span class="service-tag">Medical Imaging</span>
+                        <span class="service-tag">Detection</span>
+                        <span class="service-tag">Classification</span>
+                        <span class="service-tag">Safety AI</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
     <!-- Skills Section -->
     <section class="section" id="skills">
@@ -1157,11 +1350,11 @@
                 </a>
 
                 <!-- Email -->
-                <a class="contact-item" href="mailto:yousefessam19390@gmail.com">
+                <a class="contact-item" href="/cdn-cgi/l/email-protection#87fee8f2f4e2e1e2f4f4e6eab6beb4beb7c7e0eae6eeeba9e4e8ea">
                     <div class="contact-icon">✉️</div>
                     <div class="contact-body">
                         <div class="contact-label">Email</div>
-                        <div class="contact-value">yousefessam19390@gmail.com</div>
+                        <div class="contact-value"><span class="__cf_email__" data-cfemail="ed9482989e888b889e9e8c80dcd4ded4ddad8a808c8481c38e8280">[email&#160;protected]</span></div>
                     </div>
                     <div class="contact-arrow">→</div>
                 </a>
@@ -1215,7 +1408,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1249,13 +1442,4 @@
         document.querySelectorAll('.project-card, .skill-category').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-
-        // Custom cursor glow effect - Disabled
-        // Removed to improve performance and reduce visual distraction
-    </script>
-
-</body>
-</html>
+            el.s
